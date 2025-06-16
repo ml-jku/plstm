@@ -6,7 +6,7 @@ This repository contains the pLSTM (parallelizable Linear Source Transition Mark
 
 ## Configuration
 
-All layers within pLSTM can be configured using `plstm.config` by way of the `compoconf` library.
+All layers within pLSTM can be configured using the config classes in `plstm.config` composed by way of `compoconf` library.
 
 ## Framework Implementations
 
