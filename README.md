@@ -1,8 +1,13 @@
 # pLSTM
 
-This repository contains the pLSTM (parallelizable Linear Source Transition Mark networks) implementations.
+This repository contains the [pLSTM](https://arxiv.org/abs/2506.11997) (parallelizable Linear Source Transition Mark networks) core implementations in `flax.nnx`, `flax.linen` and `torch`.
+pLSTMs inherit ideas from Multi-Dimensional RNNs [Graves et al. 2007](http://arxiv.org/abs/0705.2011) and linear RNNs.
+With the linearity, and changing the gating structure to the Source, Transition and Mark gates, we introduce a multi-dimensional parallel associative scan, on general directed acyclic graphs (DAGs) for parallelization.
 
 ![](./linearRNN_vs_pLSTM.svg)
+
+pLSTMs also solve the vanishing/exploding gradient/activation problem on DAGs, similar to how the LSTM tackled them for RNNs on sequences.
+
 
 ## Configuration
 
@@ -19,6 +24,22 @@ pLSTM offers implementations across multiple popular deep learning frameworks:
 ## Graph Implementation
 
 Please note that `plstm_graph` is currently only implemented in `torch`.
+
+
+## References
+
+MD-RNNs:
+- Graves et al. 2007: Multi-Dimensional Recurrent Neural Networks [http://arxiv.org/abs/0705.2011](http://arxiv.org/abs/0705.2011)
+
+linear RNNs (among lots of others):
+- Schlag et al. 2021: Linear Transformers are Secretly Fast Weight Programmers [http://arxiv.org/abs/2102.11174](http://arxiv.org/abs/2102.11174)
+- Orvieto et al. 2023: Resurrecting Recurrent Neural Networks for Long Sequences [http://arxiv.org/abs/2303.06349](http://arxiv.org/abs/2303.06349)
+- Gu and Dao 2023: Mamba: Linear-time sequence modeling with selective state spaces [http://arxiv.org/abs/2312.00752](http://arxiv.org/abs/2312.00752)
+- Yang et el. 2023: Gated Linear Attention Transformers with Hardware-Efficient Training [http://arxiv.org/abs/2312.06635](http://arxiv.org/abs/2312.06635)
+- Beck et al. 2024: xLSTM: Extended Long Short Term Memory [http://arxiv.org/abs/2405.04517](http://arxiv.org/abs/2405.04517)
+
+State-Tracking:
+- Merrill et al. 2024: The Illusion of State in State Space Models [https://arxiv.org/abs/2404.08819](https://arxiv.org/abs/2404.08819)
 
 
 ## License
