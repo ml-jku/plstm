@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plstm"
+version = "0.1.0"
+description = "Parametric LSTM implementation in JAX and PyTorch"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Korbinian Pöppel", email = "poeppel@ml.jku.at" }
+]
+
+dependencies = [
+    "numpy",
+    "compoconf",
+    "networkx",
+]
+
+[project.optional-dependencies]
+jax = [
+    "jax>=0.4.13",
+    "jaxlib>=0.4.13",
+    "flax>=0.10.2,<=0.10.4",
+    "einops",
+]
+torch = [
+    "torch>=2.0.0",
+    "einops",
+]
+test = [
+    "pytest",
+    "matplotlib",
+]
